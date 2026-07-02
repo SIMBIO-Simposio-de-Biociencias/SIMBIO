@@ -21,6 +21,7 @@
     <a href="#palestrantes">Palestrantes</a>
     <a href="#programacao">Programação</a>
     <a href="#inscricoes">Inscrições</a>
+    <a href="#pagamento">Pagamento</a>
     <a href="app.html" class="nav-cta">📱 App</a>
   </div>
   <button class="nav-hamburger" id="hamburger" aria-label="Menu">
@@ -285,45 +286,62 @@
 <section class="insc-section" id="inscricoes">
   <p class="section-label">Participação</p>
   <h2 class="section-title">Inscrições</h2>
-  <div class="insc-grid">
-    <div class="insc-card">
-      <p class="insc-type">Graduação</p>
-      <p class="insc-price">A definir</p>
-      <p class="insc-price-label">valores a confirmar</p>
-      <ul class="insc-features">
-        <li>Acesso a todas as plenárias</li>
-        <li>Coffee breaks inclusos</li>
-        <li>Certificado digital</li>
-        <li>App do congresso</li>
-      </ul>
-      <a href="#" class="btn-insc">Inscrever-se</a>
+  <div class="insc-price-banner">Inscrição: <strong>R$ 80,00</strong> — valor único para todas as categorias de participantes</div>
+ 
+
+<!-- PIX / PAGAMENTO -->
+<section class="pix-section" id="pagamento">
+  <div class="pix-inner">
+    <div class="pix-left">
+      <p class="section-label">Pagamento</p>
+      <h2 class="section-title">PIX &amp; Transferência</h2>
+      <p class="pix-desc">A inscrição no V SIMBIO custa <strong>R$ 80,00</strong> (valor único para todas as categorias). Após preencher o formulário, efetue o pagamento via PIX ou transferência e envie o comprovante para confirmar sua vaga.</p>
+
+      <div class="pix-cards">
+
+        <div class="pix-card pix-card-highlight">
+          <div class="pix-card-label">Chave PIX</div>
+          <div class="pix-key" id="pix-key">ccb@uenp.edu.br</div>
+          <button class="pix-copy-btn" onclick="copyPix()">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="4" y="4" width="8" height="8" rx="1.5" stroke="currentColor" stroke-width="1.2"/><path d="M2 10V2.5A1.5 1.5 0 013.5 1H10" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+            <span id="copy-label">Copiar chave</span>
+          </button>
+        </div>
+
+        <div class="pix-card">
+          <div class="pix-card-label">Dados bancários</div>
+          <div class="pix-bank-rows">
+            <div class="pix-bank-row"><span class="pbr-label">Favorecido</span><span class="pbr-val">Universidade Estadual do Norte do Paraná</span></div>
+            <div class="pix-bank-row"><span class="pbr-label">Banco</span><span class="pbr-val">Banco do Brasil</span></div>
+            <div class="pix-bank-row"><span class="pbr-label">Agência</span><span class="pbr-val">0429-4</span></div>
+            <div class="pix-bank-row"><span class="pbr-label">Conta</span><span class="pbr-val">17180-8</span></div>
+          </div>
+        </div>
+
+      </div>
     </div>
-    <div class="insc-card featured">
-      <span class="insc-badge">Mais escolhido</span>
-      <p class="insc-type">Pós-graduação</p>
-      <p class="insc-price">A definir</p>
-      <p class="insc-price-label">valores a confirmar</p>
-      <ul class="insc-features">
-        <li>Acesso a todas as plenárias</li>
-        <li>Coffee breaks inclusos</li>
-        <li>Certificado digital</li>
-        <li>Submissão de trabalhos</li>
-        <li>App do congresso</li>
-      </ul>
-      <a href="#" class="btn-insc">Inscrever-se</a>
-    </div>
-    <div class="insc-card">
-      <p class="insc-type">Profissional</p>
-      <p class="insc-price">A definir</p>
-      <p class="insc-price-label">valores a confirmar</p>
-      <ul class="insc-features">
-        <li>Acesso completo ao evento</li>
-        <li>Coffee breaks inclusos</li>
-        <li>Certificado digital</li>
-        <li>Submissão de trabalhos</li>
-        <li>Acesso prioritário a workshops</li>
-      </ul>
-      <a href="#" class="btn-insc">Inscrever-se</a>
+
+    <div class="pix-right">
+      <div class="pix-steps">
+        <div class="pix-step-title">Como se inscrever</div>
+        <div class="pix-step">
+          <div class="pix-step-num">1</div>
+          <div class="pix-step-text">Preencha o <a href="https://forms.gle/2rd8jqgCkTkXrpicA" target="_blank">formulário de inscrição</a> com seus dados</div>
+        </div>
+        <div class="pix-step">
+          <div class="pix-step-num">2</div>
+          <div class="pix-step-text">Efetue o pagamento de <strong>R$ 80,00</strong> via PIX ou transferência para a conta acima</div>
+        </div>
+        <div class="pix-step">
+          <div class="pix-step-num">3</div>
+          <div class="pix-step-text">Envie o comprovante para <a href="mailto:ccb@uenp.edu.br">ccb@uenp.edu.br</a> com seu nome no assunto</div>
+        </div>
+        <div class="pix-step">
+          <div class="pix-step-num">4</div>
+          <div class="pix-step-text">Aguarde a confirmação por e-mail. Sua vaga é garantida após a confirmação do pagamento</div>
+        </div>
+        <a href="https://forms.gle/2rd8jqgCkTkXrpicA" target="_blank" class="pix-cta">Preencher formulário de inscrição</a>
+      </div>
     </div>
   </div>
 </section>
@@ -439,7 +457,8 @@
         <li><a href="#sobre">Sobre</a></li>
         <li><a href="#programacao">Programação</a></li>
         <li><a href="#palestrantes">Palestrantes</a></li>
-        <li><a href="#inscricoes">Inscrições</a></li>
+        <li><a href="#inscricoes">Inscrições</a>
+    <a href="#pagamento">Pagamento</a></li>
         <li><a href="app.html">Aplicativo</a></li>
       </ul>
     </div>
@@ -528,6 +547,26 @@
   document.getElementById('hamburger').addEventListener('click', () => {
     document.getElementById('nav-links').classList.toggle('open');
   });
+
+  function copyPix() {
+    const key = document.getElementById('pix-key').textContent.trim();
+    const btn = document.querySelector('.pix-copy-btn');
+    const label = document.getElementById('copy-label');
+    navigator.clipboard.writeText(key).then(() => {
+      label.textContent = 'Copiado!';
+      btn.classList.add('copied');
+      setTimeout(() => { label.textContent = 'Copiar chave'; btn.classList.remove('copied'); }, 2000);
+    }).catch(() => {
+      // fallback
+      const ta = document.createElement('textarea');
+      ta.value = key; document.body.appendChild(ta);
+      ta.select(); document.execCommand('copy');
+      document.body.removeChild(ta);
+      label.textContent = 'Copiado!';
+      setTimeout(() => { label.textContent = 'Copiar chave'; }, 2000);
+    });
+  }
+
 </script>
 </body>
 </html>
