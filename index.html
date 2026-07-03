@@ -327,13 +327,13 @@
   </div>
 </section>
 
-<!-- PIX / PAGAMENTO -->
+<!--PIX E PAGAMENTO-->
 <section class="pix-section" id="pagamento">
   <div class="pix-inner">
     <div class="pix-left">
       <p class="section-label">Pagamento</p>
       <h2 class="section-title">PIX &amp; Transferência</h2>
-      <p class="pix-desc">A inscrição no V SIMBIO custa <strong>R$ 80,00</strong> (valor único para todas as categorias). Após preencher o formulário, efetue o pagamento via PIX ou transferência e envie o comprovante para confirmar sua vaga.</p>
+      <p class="pix-desc">A inscrição no V SIMBIO possui valores por categoria (Graduando: R$ 80,00 | Pós-graduando: R$ 100,00 | Profissional: R$ 120,00). Após preencher o formulário, efetue o pagamento via PIX ou transferência e envie o comprovante para confirmar sua vaga.</p>
 
       <div class="pix-cards">
 
@@ -361,14 +361,14 @@
 
     <div class="pix-right">
       <div class="pix-steps">
-        <div class="pix-step-title">Como se inscrever</div>
+        <div class="pix-step-title">Como se inscriver</div>
         <div class="pix-step">
           <div class="pix-step-num">1</div>
-          <div class="pix-step-text">Preencha o <a href="https://forms.gle/2rd8jqgCkTkXrpicA" target="_blank">formulário de inscrição</a> com seus dados</div>
+          <div class="pix-step-text">Preencha o <a href="https://forms.gle/tLQHafhyTecFAwBt8" target="_blank">formulário de inscrição</a> com seus dados</div>
         </div>
         <div class="pix-step">
           <div class="pix-step-num">2</div>
-          <div class="pix-step-text">Efetue o pagamento de <strong>R$ 80,00</strong> via PIX ou transferência para a conta acima</div>
+          <div class="pix-step-text">Efetue o pagamento correspondente à sua categoria via PIX ou transferência para a conta ao lado</div>
         </div>
         <div class="pix-step">
           <div class="pix-step-num">3</div>
@@ -378,11 +378,60 @@
           <div class="pix-step-num">4</div>
           <div class="pix-step-text">Aguarde a confirmação por e-mail. Sua vaga é garantida após a confirmação do pagamento</div>
         </div>
-        <a href="https://forms.gle/2rd8jqgCkTkXrpicA" target="_blank" class="pix-cta">Preencher formulário de inscrição</a>
+        <a href="https://forms.gle/tLQHafhyTecFAwBt8" target="_blank" class="pix-cta">Preencher formulário de inscrição</a>
       </div>
     </div>
   </div>
 </section>
+
+<script>
+  function copyPix() {
+  // Pega o texto de dentro da div com id "pix-key"
+  const pixKeyText = document.getElementById("pix-key").innerText;
+  const copyLabel = document.getElementById("copy-label");
+
+  // API moderna de área de transferência (Funciona perfeitamente em PCs e Celulares modernos)
+  if (navigator.clipboard && window.isSecureContext) {
+    navigator.clipboard.writeText(pixKeyText).then(() => {
+      showSuccessFeedback(copyLabel);
+    }).catch(err => {
+      console.error("Erro ao copiar: ", err);
+      fallbackCopyText(pixKeyText, copyLabel); // Tenta o método antigo caso falhe
+    });
+  } else {
+    // Método alternativo para navegadores mais antigos ou conexões HTTP sem SSL
+    fallbackCopyText(pixKeyText, copyLabel);
+  }
+}
+
+// Método antigo de cópia como plano de fundo de segurança para celulares antigos
+function fallbackCopyText(text, labelElement) {
+  const textArea = document.createElement("textarea");
+  textArea.value = text;
+  textArea.style.position = "fixed"; // Evita scroll na tela do celular
+  document.body.appendChild(textArea);
+  textArea.focus();
+  textArea.select();
+  
+  try {
+    document.execCommand('copy');
+    showSuccessFeedback(labelElement);
+  } catch (err) {
+    labelElement.innerText = "Erro ao copiar";
+  }
+  
+  document.body.removeChild(textArea);
+}
+
+// Muda o texto do botão temporariamente para avisar que deu certo
+function showSuccessFeedback(element) {
+  element.innerText = "Copiado!";
+  setTimeout(() => {
+    element.innerText = "Copiar chave";
+  }, 2000); // Volta ao texto original após 2 segundos
+}
+</script>
+
 
 <!-- APP DOWNLOAD -->
 <section class="app-section" id="app">
