@@ -1086,3 +1086,128 @@
   color: var(--white, #fff);
   line-height: 1.35;
 }
+
+/* ==========================================================
+   SEÇÃO PALESTRANTES — #palestrantes
+   Fundo claro, de propósito diferente do cronograma/minicursos
+   (que são escuros) — pra não confundir visualmente as seções.
+   Adicione este bloco ao style-site.css
+   ========================================================== */
+
+.pal-section{
+  background: #f6f7f1;
+  background-image: radial-gradient(circle at 85% 0%, rgba(184,240,60,0.10) 0%, transparent 55%);
+  color: #14140f;
+  padding: 110px 24px;
+}
+
+.pal-inner{
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+.pal-section .section-label{
+  font-family: 'Inter', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: .16em;
+  font-size: .8rem;
+  font-weight: 700;
+  color: #1a6b3a;
+  margin: 0 0 10px;
+}
+
+.pal-section .section-title{
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(2.2rem, 5vw, 3.4rem);
+  letter-spacing: .02em;
+  line-height: 1.05;
+  margin: 0 0 56px;
+  color: #14140f;
+}
+
+.pal-grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 32px 28px;
+}
+
+.pal-card{
+  text-align: center;
+  background: #ffffff;
+  border: 1px solid rgba(20,20,15,0.06);
+  border-radius: 16px;
+  padding: 32px 22px 26px;
+  box-shadow: 0 2px 14px rgba(20,20,15,0.05);
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+}
+
+.pal-card:hover{
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(20,20,15,0.09);
+  border-color: rgba(26,107,58,0.25);
+}
+
+.pal-avatar{
+  width: 128px;
+  height: 128px;
+  border-radius: 50%;
+  margin: 0 auto 20px;
+  overflow: hidden;
+  background: #eef0e6;
+  border: 2px solid rgba(26,107,58,0.35);
+  box-shadow: 0 0 0 5px rgba(184,240,60,0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pal-avatar img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.pal-avatar.pal-emoji{
+  font-size: 2.6rem;
+}
+
+.pal-name{
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 1.08rem;
+  letter-spacing: .01em;
+  color: #14140f;
+  margin: 0 0 6px;
+  line-height: 1.3;
+}
+
+.pal-topic{
+  font-family: 'Inter', sans-serif;
+  text-transform: uppercase;
+  font-size: .74rem;
+  letter-spacing: .08em;
+  color: #1a6b3a;
+  margin: 0 0 12px;
+  font-weight: 700;
+}
+
+.pal-bio{
+  font-family: 'Inter', sans-serif;
+  font-size: .85rem;
+  color: #5c5c54;
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* Responsivo — telas pequenas */
+@media (max-width: 640px){
+  .pal-section{ padding: 80px 20px; }
+  .pal-grid{
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 24px 16px;
+  }
+  .pal-card{ padding: 24px 16px 20px; }
+  .pal-avatar{ width: 100px; height: 100px; margin-bottom: 14px; }
+  .pal-name{ font-size: .98rem; }
+}
