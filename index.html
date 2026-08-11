@@ -536,47 +536,141 @@
 
 <!--INSCRICOES-->
 <section class="insc-section" id="inscricoes">
+  <style>
+    .insc-section{ position:relative; }
+    .promo-badge{
+      display:inline-flex; align-items:center; gap:8px;
+      background:#eaf7db; color:#1a6b3a;
+      font-family:'Inter',sans-serif; font-weight:700; font-size:.78rem;
+      text-transform:uppercase; letter-spacing:.08em;
+      padding:8px 16px; border-radius:999px;
+      border:1px solid rgba(26,107,58,0.22);
+      margin:0 0 20px;
+    }
+    .promo-badge .dot{
+      width:8px; height:8px; border-radius:50%;
+      background:#b8f03c; box-shadow:0 0 0 3px rgba(184,240,60,0.3);
+    }
+    .promo-note{
+      font-family:'Inter',sans-serif; font-size:.95rem; color:#5c5c54;
+      max-width:620px; margin:0 0 48px; line-height:1.6;
+    }
+    .promo-note strong{ color:#14140f; }
+
+    .promo-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(220px,1fr));
+      gap:24px;
+      margin-bottom:40px;
+    }
+    .promo-card{
+      background:#fff; border:1px solid rgba(20,20,15,0.08);
+      border-radius:16px; padding:30px 24px;
+      text-align:center;
+      box-shadow:0 2px 14px rgba(20,20,15,0.05);
+      transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+    }
+    .promo-card:hover{ transform:translateY(-4px); box-shadow:0 10px 24px rgba(20,20,15,0.09); }
+    .promo-card.featured{
+      border-color:#1a6b3a;
+      background:#f6fbf0;
+      position:relative;
+    }
+    .promo-card.featured::before{
+      content:"Mais escolhido";
+      position:absolute; top:-13px; left:50%; transform:translateX(-50%);
+      background:#1a6b3a; color:#fff;
+      font-family:'Inter',sans-serif; font-size:.68rem; font-weight:700;
+      letter-spacing:.06em; text-transform:uppercase;
+      padding:5px 14px; border-radius:999px; white-space:nowrap;
+    }
+    .promo-card-label{
+      font-family:'Inter',sans-serif; font-weight:600; font-size:.95rem;
+      color:#14140f; margin:0 0 10px;
+    }
+    .promo-card-price{
+      font-family:'Bebas Neue',sans-serif; font-size:2.6rem;
+      color:#1a6b3a; letter-spacing:.02em; line-height:1;
+      margin:0 0 4px;
+    }
+    .promo-card-price span{ font-size:1rem; font-family:'Inter',sans-serif; color:#5c5c54; font-weight:600; }
+    .promo-card-sub{
+      font-family:'Inter',sans-serif; font-size:.78rem; color:#8a8a80;
+      margin:0;
+    }
+
+    .promo-extra-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(260px,1fr));
+      gap:20px;
+    }
+    .promo-extra-card{
+      background:#f6f7f1; border:1px dashed rgba(26,107,58,0.3);
+      border-radius:14px; padding:22px 24px;
+      display:flex; align-items:center; justify-content:space-between; gap:16px;
+    }
+    .promo-extra-text p{ margin:0; font-family:'Inter',sans-serif; }
+    .promo-extra-title{ font-weight:600; font-size:.9rem; color:#14140f; margin-bottom:4px !important; }
+    .promo-extra-desc{ font-size:.8rem; color:#5c5c54; }
+    .promo-extra-price{
+      font-family:'Bebas Neue',sans-serif; font-size:1.7rem; color:#1a6b3a;
+      white-space:nowrap;
+    }
+    .promo-extra-price span{ font-size:.7rem; font-family:'Inter',sans-serif; color:#8a8a80; display:block; font-weight:600; }
+
+    @media (max-width:640px){
+      .promo-extra-card{ flex-direction:column; align-items:flex-start; text-align:left; }
+    }
+  </style>
+
   <p class="section-label">Participação</p>
   <h2 class="section-title">Inscrições</h2>
-  <div class="insc-grid">
-    <div class="insc-card">
-      <p class="insc-type">Graduando</p>
-      <p class="insc-price">R$ 80,00</p>
-      <p class="insc-price-label">Com um minicurso incluso para os 30 primeiros inscritos</p>
-      <ul class="insc-features">
-        <li>Acesso a todas as plenárias</li>
-        <li>Coffee breaks inclusos</li>
-        <li>Certificado digital</li>
-        <li>App do congresso</li>
-      </ul>
-      <a href="https://forms.gle/tLQHafhyTecFAwBt8" target="_blank" class="btn-insc">Inscrever-se</a>
+
+  <div class="promo-badge"><span class="dot"></span>Promoção válida até 31 de agosto</div>
+  <p class="promo-note">Garanta sua vaga com preço especial de lançamento — os valores abaixo valem <strong>somente até o fim de agosto</strong>. Escolha o pacote que inclui o evento e os minicursos que quiser fazer.</p>
+
+  <div class="promo-grid">
+    <div class="promo-card">
+      <p class="promo-card-label">Evento</p>
+      <p class="promo-card-price">R$ 60<span>,00</span></p>
+      <p class="promo-card-sub">Acesso completo à programação</p>
     </div>
-    <div class="insc-card featured">
-      <p class="insc-type">Pós-graduando</p>
-      <p class="insc-price">R$ 100,00</p>
-      <p class="insc-price-label">Com um minicurso incluso para os 30 primeiros inscritos</p>
-      <ul class="insc-features">
-        <li>Acesso a todas as plenárias</li>
-        <li>Coffee breaks inclusos</li>
-        <li>Certificado digital</li>
-        <li>Submissão de trabalhos</li>
-        <li>App do congresso</li>
-      </ul>
-      <a href="https://forms.gle/tLQHafhyTecFAwBt8" target="_blank" class="btn-insc">Inscrever-se</a>
+    <div class="promo-card">
+      <p class="promo-card-label">Evento + 1 minicurso</p>
+      <p class="promo-card-price">R$ 80<span>,00</span></p>
+      <p class="promo-card-sub">Evento + 1 minicurso à sua escolha</p>
     </div>
-    <div class="insc-card">
-      <p class="insc-type">Profissional</p>
-      <p class="insc-price">R$ 120,00</p>
-      <p class="insc-price-label">Com um minicurso incluso para os 30 primeiros inscritos</p>
-      <ul class="insc-features">
-        <li>Acesso completo ao evento</li>
-        <li>Coffee breaks inclusos</li>
-        <li>Certificado digital</li>
-        <li>Submissão de trabalhos</li>
-        <li>Acesso prioritário a workshops</li>
-      </ul>
-      <a href="https://forms.gle/tLQHafhyTecFAwBt8" target="_blank" class="btn-insc">Inscrever-se</a>
+    <div class="promo-card featured">
+      <p class="promo-card-label">Evento + 2 minicursos</p>
+      <p class="promo-card-price">R$ 100<span>,00</span></p>
+      <p class="promo-card-sub">Evento + 2 minicursos à sua escolha</p>
     </div>
+    <div class="promo-card">
+      <p class="promo-card-label">Evento + 3 minicursos</p>
+      <p class="promo-card-price">R$ 110<span>,00</span></p>
+      <p class="promo-card-sub">Evento + 3 minicursos à sua escolha</p>
+    </div>
+  </div>
+
+  <div class="promo-extra-grid">
+    <div class="promo-extra-card">
+      <div class="promo-extra-text">
+        <p class="promo-extra-title">Já se inscreveu só no evento?</p>
+        <p class="promo-extra-desc">Dá pra adicionar minicursos depois, um a um.</p>
+      </div>
+      <p class="promo-extra-price">R$ 30<span>cada minicurso</span></p>
+    </div>
+    <div class="promo-extra-card">
+      <div class="promo-extra-text">
+        <p class="promo-extra-title">Quer só o minicurso?</p>
+        <p class="promo-extra-desc">Inscrição isolada, sem participar do evento.</p>
+      </div>
+      <p class="promo-extra-price">R$ 40<span>cada minicurso</span></p>
+    </div>
+  </div>
+
+  <div style="text-align:center; margin-top:44px;">
+    <a href="https://forms.gle/tLQHafhyTecFAwBt8" target="_blank" class="btn-insc">Inscrever-se</a>
   </div>
 </section>
 
